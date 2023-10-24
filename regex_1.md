@@ -6,11 +6,11 @@
 - Une regex est une chaine de caractères, un motif (*pattern*) qui a pour rôle de décrire un ensemble de caractères possibles.
 - Les regex sont donc   *la description formelle d'un ensemble de possibilités, selon une syntaxe donnée*, et non un langage.C'est cette syntaxe que l'on va apprendre.
 - Elles sont interprétées par des moteurs, soit *via* une interface graphique (par le biais d'un Clt F par exemple) soit sans interface graphique (dans un script, dans un terminal). 
-- On peut les utiliser par exemple: avec Python, Perl, Java,... dans certaines commandes UNIX (`grep`,...), dans des traitements de texte (LibreOffice) et de éditeurs de texte (Texstudio, Vim).
+- On peut les utiliser par exemple: avec Python, Perl, Java,... dans certaines commandes UNIX (`grep`,...), dans des traitements de texte (LibreOffice) et des éditeurs de texte (Texstudio, Vim).
 	
 - Le moteur teste chaque caractère d'une chaîne de caractère. Si un caractère testé correspond au premier caractère de la regex, le moteur teste alors le caractère suivant, etc. Si un ensemble de caractères correspond à l'ensemble de la regex, il est considéré comme une occurrence, et le moteur passe à la suite du texte à traiter.
 
-**nb** Il y a parfois selon les langages des spécificités concernant l'utilsation des Regex; certaines seront mentionnées dans ce cours.
+**nb** Il y a parfois selon les langages des spécificités concernant l'utilisation des Regex; certaines seront mentionnées dans ce cours.
 
 ### Ressources
 
@@ -30,7 +30,7 @@
 *opérateurs:* caractères spéciaux,qui ont une sémantique particulière, par opposition aux  *caractères littéraux*,qui ne représentent qu'eux-mêmes. Les opérateurs sont: 
  `(, ), [, ], ., *, ?, +, ^, |, $ , -, \`
 
-*échapper un caractère*: pour chercher un des des opérateurs, il faut l'*échapper* en le faisant précéder du carcatère `\`. Par exemple, pour chercher un point, il faut taper `\.`
+*échapper un caractère*: pour chercher un des des opérateurs, il faut l'*échapper* en le faisant précéder du caractère `\`. Par exemple, pour chercher un point, il faut taper `\.`
 
 
 
@@ -64,17 +64,17 @@
 |`[:punct:]`||caractère de ponctuation|
 |`[:blank:]`|`\h`|n'importe quel caractère blanc (mais pas les retours à la ligne|
 
-- Le standard POSIX a été à l'origine rédigé pour UNIX. POSIX est un standard qui défini 12 classes. 
+- Le standard POSIX a été à l'origine rédigé pour UNIX. POSIX est un standard qui définit 12 classes. 
 - Les classes POSIX non abrégées (entre crochets) doivent être elles-mêmes **dans** une classe de caractères. Par exemple, pour chercher un caractère de ponctuation seul, il faut écrire `[[:punct:]]`.
 - Java et  Python n'acceptent pas les POSIX entre crochets; mais Perl les accepte. On peut de même faire une recherche en utilisant les POSIX entre crochets dans LibreOffice  ou encore  TexStudio
-- Les raccourcis (commençant pas `\`) sont communément reconnus. Certains langages en utilisent également d'autres.
+- Les raccourcis (commençant par `\`) sont communément reconnus. Certains langages en utilisent également d'autres.
 
 
 
 
 ### Quantificateurs
 
-- Les *quantificateurs* se placent après un caractère ou un groupement de caractères pour indiquer le nombre de répétition de ce caractère ou de ce groupement de caractères.
+- Les *quantificateurs* se placent après un caractère ou un groupement de caractères pour indiquer le nombre de répétitions de ce caractère ou de ce groupement de caractères.
 -  *groupement* ensemble "capturé", au sein duquel peut se trouver l'opérateur OU, et sur lequel peuvent porter les quantifieurs. Cet ensemble est conservé en mémoire et peut être réutilisé plus tard (cf *infra*).
 Exemple: `m(o|a|e)t` = `mot|mat|met`; `m(ou|iau)le` = `moule|miaule`
 

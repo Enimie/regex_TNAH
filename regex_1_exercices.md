@@ -49,10 +49,10 @@ Ils évoquent l'anticonstitutionnalité, le déconstructivisme et    l'hyperpré
 ### Quantificateurs
 
 
-- trouver toutes les occurences où `aïe` est répété en un seul mot, et les remplacer par `ouille`
+- trouver toutes les occurrences où `aïe` est répété en un seul mot, et les remplacer par `ouille`
 - Chercher toutes les occurrences de `dominus`
 - Sélectionner les années
-- Sélectionner les années avant 1900
+- Sélectionner les années antérieures à 1900
 - Sélectionner les millésimes
 - Trouver les mots qui, par faute de frappe, commencent par deux majuscules
 - Sélectionner les prénoms composés
