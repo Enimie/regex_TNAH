@@ -92,9 +92,33 @@ Exemple: `m(o|a|e)t` = `mot|mat|met`; `m(ou|iau)le` = `moule|miaule`
 
 
 
+### Ancres et mise en place du texte
+
+|expression|equivalent|
+|`\b`|début ou fin de mot|
+|`\B`|au milieu d'un mot (inverse de `\B`)|
+|`\n`|fin de ligne|
+|`\r`|retour charriot (saut de paragraphe)|
+|`\t`|tabulation|
+`\f`| pagebreak|
+| `^`|début de ligne|
+|`$`|fin de chaine/fin de ligne|
+
+
+**nb**: 
+- la différence entre fin de ligne et retour charriot n'apparait pas dans le texte brut; en revanche, elle joue un rôle dans les traitements de texte WYSIWYG.
+- dans Libreoffice, `$` indique la fin de ligne,  `\n`  le saut de paragrgraphe. 
 
 
 
+### Groupement, captures et références arrières (*backreferences*)
 
 
+- les groupements (voir *supra*) gardent en mémoire l'élément mis entre parenthèses. Celui-ci peut ensuite être rappelé,  dans la regex, par `\1, \2` et  dans la fonction de remplacement, par `$1, $2` ou `\1, \2` selon les langages.
+-  Le chiffre permet de se référer au roupement, dans l'ordre d'apparition dans la regex;  c'est ce que l'on appelle les références arrières (*backreferences*). 
+
+ **Exemples**
+
+1.  `(.)\1` cherche n'importe quel caractère, gardé en mémoire dans le groupement 1, suivi du même caractère (aa, bb, deux espaces à la suite, etc).
+2. `(\d{2})\/(\d{2})` cherche, par exemple, l'expression de la date selon le format `jour/mois`, qui peut être remplacée par `$2-$1` pour obtenir mois-jour.
 
