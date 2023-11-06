@@ -95,6 +95,7 @@ Exemple: `m(o|a|e)t` = `mot|mat|met`; `m(ou|iau)le` = `moule|miaule`
 ### Ancres et mise en place du texte
 
 |expression|equivalent|
+|--|-- |
 |`\b`|début ou fin de mot|
 |`\B`|au milieu d'un mot (inverse de `\B`)|
 |`\n`|fin de ligne|

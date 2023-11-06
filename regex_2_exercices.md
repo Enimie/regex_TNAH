@@ -39,7 +39,7 @@ Charles Cros (1842-1888)
 Source: "Wikipédia"  https://fr.wikipedia.org/wiki/Le_Hareng_saur
 ```
 
-## Remise en jambes regex
+## Remise en jambe regex
 
 
 - Trouver l'auteur du poème
@@ -52,10 +52,10 @@ Source: "Wikipédia"  https://fr.wikipedia.org/wiki/Le_Hareng_saur
 ### Ancres et  mise en place du texte
 
 
-- trouver tous les mots terminant par la lettre `c` 
-- trouver tous les `c` au milieu d'un mot
-- sélectionner les mots de trois lettres
-- vérifier qu'il y a bien une majuscule en début de chaque vers
+- Trouver tous les mots terminant par la lettre `c` 
+- Trouver tous les `c` au milieu d'un mot
+- Sélectionner les mots de trois lettres
+- Vérifier qu'il y a bien une majuscule en début de chaque vers
 
 
 ### Groupements, captures et références arrières (*backreference*)
@@ -64,10 +64,10 @@ Source: "Wikipédia"  https://fr.wikipedia.org/wiki/Le_Hareng_saur
 
 Mettons à présent le texte en LaTeX. Pour cela, à chacune des opérations suivantes, copier-coller le texte sur lequel ont eu lieu les substitutions pour conserver les modifications.
 
-- mettre l'url dans une commande `\url` (attention, ne pas prendre l'espace)
+- Mettre l'url dans une commande `\url` (attention, ne pas prendre l'espace)
 - Mettre le nom de l'auteur, qui est au format "Prénom Nom",  dans la commande `\auteur{Nom}{Prénom}`
 - Remplacer la note de bas de page rédigée au format markdown (`[^ texte de la note]`) par une  `\footnote{texte}`
-- Remplacer les guillements ("") par la commande `\enquote{}` 
+- Remplacer les guillemets ("") par la commande `\enquote{}` 
 + Mettre le titre dans la commande \section{}`, sans les parenthèses
 - Sélectionner les vers; ajouter `&` à la fin des vers.
 - À la fin des strophes, il faut `\&` au lieu de `&`
