@@ -36,7 +36,7 @@ Et amuser les enfants - petits, petits, petits.
 
 Charles Cros (1842-1888)
 
-Source: "Wikipédia"  https://fr.wikipedia.org/wiki/Le_Hareng_saur
+Source sur "Le hareng saur": "Wikipédia"  https://fr.wikipedia.org/wiki/Le_Hareng_saur
 ```
 
 ## Remise en jambe regex

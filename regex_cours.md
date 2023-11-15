@@ -123,3 +123,35 @@ Exemple: `m(o|a|e)t` = `mot|mat|met`; `m(ou|iau)le` = `moule|miaule`
 1.  `(.)\1` cherche n'importe quel caractère, gardé en mémoire dans le groupement 1, suivi du même caractère (aa, bb, deux espaces à la suite, etc).
 2. `(\d{2})\/(\d{2})` cherche, par exemple, l'expression de la date selon le format `jour/mois`, qui peut être remplacée par `$2-$1` pour obtenir mois-jour.
 
+
+<!--**nb** Il est également possible de donner un nom aux groupements pour les rappeler ensuite par ce nom-->
+
+
+### Les recherches avant et arrière (*lookaround*) 
+
+Ces fonctions   permettent de préciser, sans les conserver en mémoire, les éléments qui précèdent (*lookahead*, recherche avant) ou qui suivent (*lookbehind*, recherche arrière) les motifs recherchés. Elles peuvent être positives (suivre ou précéder) ou négatives (ne pas suivre ni précéder).
+
+|Fonction|Expression|Exemple|
+|-- |-- |-- |
+|Recherche avant positive|`(?=x)`|`c(?=d)`: c suivi de d|
+|Recherche avant négative|`(?!x)`|`c(?!d)`: c non suivi de d|
+|Recherche arrière positive|`(?<=x)`|`(?<=d)c`: c précédé de d|
+|Recherche arrière négative|`(?<!x)`|`(?<!d)c`: non précédé de d|
+
+
+- Les recherches avant et arrière servent notamment à extraire des données entre balises
+Pour selectionner le texte entre balise dans l'exemple suivant: `<balise>contenu de la balise</balise>`, il faut écrire `(?<=<balise>).*(?=<\/balise>)` 
+
+
+**nb**
+Il est également possible  d'écrire une structure conditionnelle (*if then else*) en utilisant la préanalyse. Voir par exemple le [ici](https://stormimon.developpez.com/dotnet/expressions-regulieres/#L3-9)
+
+## Pour aller plus loin
+
+1. Il existe sous linux un outil en ligne de commande,  `sed`, qui permet de modifier des fichiers en leur appliquant des recherches et des substitutions formulées en regex. 
+
+Vous trouverez par exemple un tutoriel  [ici](https://fr.linux-console.net/?p=14620) 
+
+2. Un article évoquant notamment l'utilisation possible des regex par les historiens : Sébastien de Valeriola, *L’ordinateur au service du dépouillement de sources historiques*, [ici](https://www.cairn.info/revue-histoire-et-mesure-2020-2-page-171.htm&wt.src=pdf)
+
+3. Un blog exposant comment extraire sous forme de tableau les données d'un texte, au moyen des regex: [ici](https://programminghistorian.org/fr/lecons/comprendre-les-expressions-regulieres)
