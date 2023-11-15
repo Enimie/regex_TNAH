@@ -140,11 +140,11 @@ Ces fonctions   permettent de préciser, sans les conserver en mémoire, les él
 
 
 - Les recherches avant et arrière servent notamment à extraire des données entre balises
-Pour selectionner le texte entre balise dans l'exemple suivant: `<balise>contenu de la balise</balise>`, il faut écrire `(?<=<balise>).*(?=<\/balise>)` 
+Pour selectionner le texte entre balises dans l'exemple suivant: `<balise>contenu de la balise</balise>`, il faut écrire `(?<=<balise>).*(?=<\/balise>)` 
 
 
 **nb**
-Il est également possible  d'écrire une structure conditionnelle (*if then else*) en utilisant la préanalyse. Voir par exemple le [ici](https://stormimon.developpez.com/dotnet/expressions-regulieres/#L3-9)
+Il est également possible  d'écrire une structure conditionnelle (*if then else*) en utilisant la recherche avant. Voir par exemple le tutoriel [ici](https://stormimon.developpez.com/dotnet/expressions-regulieres/#L3-9)
 
 ## Pour aller plus loin
 
