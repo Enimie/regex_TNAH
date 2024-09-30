@@ -8,7 +8,7 @@
 - Elles sont interprétées par des moteurs, soit *via* une interface graphique (par le biais d'un Clt F par exemple) soit sans interface graphique (dans un script, dans un terminal). 
 - On peut les utiliser par exemple: avec Python, Perl, Java,... dans certaines commandes UNIX (`grep`,...), dans des traitements de texte (LibreOffice) et des éditeurs de texte (Texstudio, Vim).
 	
-- Le moteur teste chaque caractère d'une chaîne de caractère. Si un caractère testé correspond au premier caractère de la regex, le moteur teste alors le caractère suivant, etc. Si un ensemble de caractères correspond à l'ensemble de la regex, il est considéré comme une occurrence, et le moteur passe à la suite du texte à traiter.
+- Le moteur teste chaque caractère d'une chaîne de caractères. Si un caractère testé correspond au premier caractère de la regex, le moteur teste alors le caractère suivant, etc. Si un ensemble de caractères correspond à l'ensemble de la regex, il est considéré comme une occurrence, et le moteur passe à la suite du texte à traiter.
 
 **nb** Il y a parfois selon les langages des spécificités concernant l'utilisation des Regex; certaines seront mentionnées dans ce cours.
 
@@ -27,8 +27,8 @@
 - `|`: = OU. `moi|toi` = on cherche "moi" ou "toi"
 
 
-*opérateurs:* caractères spéciaux,qui ont une sémantique particulière, par opposition aux  *caractères littéraux*,qui ne représentent qu'eux-mêmes. Les opérateurs sont: 
- `(, ), [, ], ., *, ?, +, ^, |, $ , -, \`
+*opérateurs:* caractères spéciaux, qui ont une sémantique particulière, par opposition aux  *caractères littéraux*, qui ne représentent qu'eux-mêmes. Les opérateurs sont: 
+ `( ) [ ] . * ? + ^ | $  - \`
 
 *échapper un caractère*: pour chercher un des des opérateurs, il faut l'*échapper* en le faisant précéder du caractère `\`. Par exemple, pour chercher un point, il faut taper `\.`
 
@@ -37,13 +37,13 @@
 
 ### Classes de caractères
 
- *classe de caractères* une classe de caractère, entre crochets, définit un *ensemble de caractères* qui pourront correspondre (*match*) à la recherche d'un caractère.
+ *classe de caractères*: une classe de caractères, entre crochets, définit un *ensemble de caractères* qui pourront correspondre (*match*) à la recherche d'un caractère.
 
 - `[abc]`: recherche a, b ou c
 - `[a-z] [A-Z] [0-9]`: recherche un caractère dans l'intervalle donné. `[a-zA-Z]` recherche ainsi n'importe quelle lettre en minuscule ou majuscule; `[a-zA-Z0-9]` cherche aussi les nombres
 -  `[^aei]`: recherche n'importe quel caractère à l'exclusion de ceux indiqués après le `^` 
 
-**nb**: Selon les moteurs, les caractères Unicode sont pris en compte (dans LibreOffic par exemple), ou Unicode doit être explicitement indiqué; cela signifie que le caractère `é`, par exemple, n'est pas forcément reconnu par l'intervalle `[a-z]`.
+**nb**: Selon les moteurs, les caractères Unicode sont pris en compte (dans LibreOffice par exemple), ou Unicode doit être explicitement indiqué; cela signifie que le caractère `é`, par exemple, n'est pas forcément reconnu par l'intervalle `[a-z]`.
 
 - Pour éviter d'avoir à taper les classes les plus fréquentes, il existe des classes prédéfinies.
 
@@ -62,7 +62,7 @@
 |`[:space:]`|`\s`| `[ \t\n\x0B\f\r]` (n'importe quel caractère d'espacement: espace, retour de chariot, tabulation..)|
 ||`\S`|`[^\s]` (n'importe quel caractère qui n'est pas un espacement)|
 |`[:punct:]`||caractère de ponctuation|
-|`[:blank:]`|`\h`|n'importe quel caractère blanc (mais pas les retours à la ligne|
+|`[:blank:]`|`\h`|n'importe quel caractère blanc (mais pas les retours à la ligne)|
 
 - Le standard POSIX a été à l'origine rédigé pour UNIX. POSIX est un standard qui définit 12 classes. 
 - Les classes POSIX non abrégées (entre crochets) doivent être elles-mêmes **dans** une classe de caractères. Par exemple, pour chercher un caractère de ponctuation seul, il faut écrire `[[:punct:]]`.
@@ -75,7 +75,7 @@
 ### Quantificateurs
 
 - Les *quantificateurs* se placent après un caractère ou un groupement de caractères pour indiquer le nombre de répétitions de ce caractère ou de ce groupement de caractères.
--  *groupement* ensemble "capturé", au sein duquel peut se trouver l'opérateur OU, et sur lequel peuvent porter les quantifieurs. Cet ensemble est conservé en mémoire et peut être réutilisé plus tard (cf *infra*).
+-  *groupement*: ensemble "capturé", au sein duquel peut se trouver l'opérateur OU, et sur lequel peuvent porter les quantifieurs. Cet ensemble est conservé en mémoire et peut être réutilisé plus tard (cf *infra*).
 Exemple: `m(o|a|e)t` = `mot|mat|met`; `m(ou|iau)le` = `moule|miaule`
 
 
@@ -94,7 +94,7 @@ Exemple: `m(o|a|e)t` = `mot|mat|met`; `m(ou|iau)le` = `moule|miaule`
 
 ### Ancres et mise en place du texte
 
-|expression|equivalent|
+|expression|équivalent|
 |--|-- |
 |`\b`|début ou fin de mot|
 |`\B`|au milieu d'un mot (inverse de `\B`)|
@@ -108,7 +108,7 @@ Exemple: `m(o|a|e)t` = `mot|mat|met`; `m(ou|iau)le` = `moule|miaule`
 
 **nb**: 
 - la différence entre fin de ligne et retour charriot n'apparait pas dans le texte brut; en revanche, elle joue un rôle dans les traitements de texte WYSIWYG.
-- dans Libreoffice, `$` indique la fin de ligne,  `\n`  le saut de paragrgraphe. 
+- dans Libreoffice, `$` indique la fin de ligne,  `\n`  le saut de paragraphe. 
 
 
 
@@ -116,7 +116,7 @@ Exemple: `m(o|a|e)t` = `mot|mat|met`; `m(ou|iau)le` = `moule|miaule`
 
 
 - les groupements (voir *supra*) gardent en mémoire l'élément mis entre parenthèses. Celui-ci peut ensuite être rappelé,  dans la regex, par `\1, \2` et  dans la fonction de remplacement, par `$1, $2` ou `\1, \2` selon les langages.
--  Le chiffre permet de se référer au roupement, dans l'ordre d'apparition dans la regex;  c'est ce que l'on appelle les références arrières (*backreferences*). 
+-  Le chiffre permet de se référer au groupement, dans l'ordre d'apparition dans la regex;  c'est ce que l'on appelle les références arrières (*backreferences*). 
 
  **Exemples**
 
@@ -139,8 +139,8 @@ Ces fonctions   permettent de préciser, sans les conserver en mémoire, les él
 |Recherche arrière négative|`(?<!x)`|`(?<!d)c`: non précédé de d|
 
 
-- Les recherches avant et arrière servent notamment à extraire des données entre balises
-Pour selectionner le texte entre balises dans l'exemple suivant: `<balise>contenu de la balise</balise>`, il faut écrire `(?<=<balise>).*(?=<\/balise>)` 
+- Les recherches avant et arrière servent notamment à extraire des données entre balises.
+Pour sélectionner le texte entre balises dans l'exemple suivant: `<balise>contenu de la balise</balise>`, il faut écrire `(?<=<balise>).*(?=<\/balise>)` 
 
 
 **nb**
