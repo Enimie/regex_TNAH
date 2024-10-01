@@ -62,5 +62,5 @@ Ils évoquent l'anticonstitutionnalité, le déconstructivisme et    l'hyperpré
 
 
 **Pour s'entraîner chez soi**:
-Faire les exercices 1 à 4 ici [regextutorial](http://regextutorials.com/excercise.html?Floating%20point%20numbers)
+Faire les exercices 1 à 3 ici [regextutorial](http://regextutorials.com/excercise.html?Floating%20point%20numbers)
 (les exercices suivants engagent des notions que nous n'avons pas encore vues)
