@@ -52,6 +52,9 @@
 -  Pour rechercher un caractère unicode par son encodage, il faut taper `\x{code du caractère}`. Exemple: le s long (ſ) est encodé U+017F. Pour le rechercher, il faut taper `\x{O17F}`
 - Il est possible de créer des classes avec les encodages unicode. Par exemple, l'alphabet syriaque est encodé dans le bloc  U+0700 à U+074F (source: [wikipedia](https://fr.wikipedia.org/wiki/Alphabet_syriaque). Pour rechercher n'importe quel caractère en syriaque, il faut donc taper `[\x{0700}-\x{074F}]`
 
+- **Nb**: selon les langages de programmation, ne pas oublier de mettre le "flag" indiquant que le cherche en unicode. 
+
+- En python, la syntaxe est `\u+code du caractère`. Exemple: `\u017F` pour le s long. Pour plus de précisisons, voir par exemple ici : [real python](https://realpython.com/python-encodings-guide/)
 
 
 ### Classes de caractères prédéfinies (classes d'équivalence)

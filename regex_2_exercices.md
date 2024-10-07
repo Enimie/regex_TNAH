@@ -11,6 +11,11 @@ Le premier a pour encodage `U+1F600`; le second a pour encodage `U+1F616`; le tr
 - Choisir un émoticône et le sélectionner par une regex
 - Trouver un moyen pour sélectionner les trois à la fois
 
+- Coller les carcatères syriens suivants et chercher comment les sélectionner: 
+```
+ܚܟܤ
+
+```
 
 ### Exercices
 
