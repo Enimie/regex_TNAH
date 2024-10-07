@@ -136,6 +136,12 @@ Exemple: `m(o|a|e)t` = `mot|mat|met`; `m(ou|iau)le` = `moule|miaule`
 <!--**nb** Il est également possible de donner un nom aux groupements pour les rappeler ensuite par ce nom-->
 
 
+### Les "flags" (drapeaux, modificateurs de recherche)
+
+- Les flags, ou drapeaux, permettent de modifier la façon dont fonctionnent les recherches
+- nous avons déjà évoqué le drapeau "u" qui permet d'inclure les caractères unicode, par exemple dans la classe `\w`
+- autre utilisation: rendre les opérateur "paresseux". Exemple: l'expression `".*"` sélectionnera le plus grand texte possible, comme `"du texte entre guillemets" et "encore un autre"`. Pour ne sélectionner que la première partie entre guillemets, il faut mettre le flag "ungreedy" (`U`) 
+
 ### Les recherches avant et arrière (*lookaround*) 
 
 Ces fonctions   permettent de préciser, sans les conserver en mémoire, les éléments qui précèdent (*lookahead*, recherche avant) ou qui suivent (*lookbehind*, recherche arrière) les motifs recherchés. Elles peuvent être positives (suivre ou précéder) ou négatives (ne pas suivre ni précéder).
