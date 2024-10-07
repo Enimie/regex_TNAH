@@ -1,5 +1,18 @@
 # Cours 2 - Exercices
 
+###  Les caractères unicodes (suite):
+
+ copier dans [regex2](https://regex101.com/) les émoticônes suivantes:
+`😀😖😩`
+
+Le premier a pour encodage `U+1F600`; le second a pour encodage `U+1F616`; le troisième `U+1F629`.
+ Pour rechercher un caractère unicode par son encodage, il faut taper `\x{code du caractère}`
+
+- Choisir un émoticône et le sélectionner par une regex
+- Trouver un moyen pour sélectionner les trois à la fois
+
+
+### Exercices
 
 Pour ce cours, les exercices se font sur le texte suivant, à copier dans [regex2](https://regex101.com/)
 

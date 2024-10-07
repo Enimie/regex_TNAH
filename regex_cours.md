@@ -47,6 +47,12 @@
 
 - Pour éviter d'avoir à taper les classes les plus fréquentes, il existe des classes prédéfinies.
 
+### Rechercher des caractères unicodes
+
+-  Pour rechercher un caractère unicode par son encodage, il faut taper `\x{code du caractère}`. Exemple: le s long (ſ) est encodé U+017F. Pour le rechercher, il faut taper `\x{O17F}`
+- Il est possible de créer des classes avec les encodages unicode. Par exemple, l'alphabet syriaque est encodé dans le bloc  U+0700 à U+074F (source: [wikipedia](https://fr.wikipedia.org/wiki/Alphabet_syriaque). Pour rechercher n'importe quel caractère en syriaque, il faut donc taper `[\x{0700}-\x{074F}]`
+
+
 
 ### Classes de caractères prédéfinies (classes d'équivalence)
 
