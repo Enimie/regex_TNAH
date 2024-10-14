@@ -140,7 +140,8 @@ Exemple: `m(o|a|e)t` = `mot|mat|met`; `m(ou|iau)le` = `moule|miaule`
 
 - Les flags, ou drapeaux, permettent de modifier la façon dont fonctionnent les recherches
 - nous avons déjà évoqué le drapeau "u" qui permet d'inclure les caractères unicode, par exemple dans la classe `\w`
-- autre utilisation: rendre les opérateur "paresseux". Exemple: l'expression `".*"` sélectionnera le plus grand texte possible, comme `"du texte entre guillemets" et "encore un autre"`. Pour ne sélectionner que la première partie entre guillemets, il faut mettre le flag "ungreedy" (`U`) 
+- autre utilisation: rendre les opérateur "paresseux". Exemple: l'expression `".*"` sélectionnera le plus grand texte possible, comme `"du texte entre guillemets" et "encore un autre"`. Pour ne sélectionner que la première partie entre guillemets, il faut mettre le flag "ungreedy" (`U`)
+- autre possibilité: enlever le flag "global" (`g`) pour ne trouver que la première occurrence
 
 ### Les recherches avant et arrière (*lookaround*) 
 
@@ -153,6 +154,7 @@ Ces fonctions   permettent de préciser, sans les conserver en mémoire, les él
 |Recherche arrière positive|`(?<=x)`|`(?<=d)c`: c précédé de d|
 |Recherche arrière négative|`(?<!x)`|`(?<!d)c`: non précédé de d|
 
+- Attention: même s'il y a des parenthèse, ce n'est pas conservé en mémoire!
 
 - Les recherches avant et arrière servent notamment à extraire des données entre balises.
 Pour sélectionner le texte entre balises dans l'exemple suivant: `<balise>contenu de la balise</balise>`, il faut écrire `(?<=<balise>).*(?=<\/balise>)` 
