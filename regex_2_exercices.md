@@ -93,3 +93,4 @@ Mettons à présent le texte en LaTeX. Pour cela, à chacune des opérations sui
 - Mettre `\beginnumbering` avant la première commande `\stanza`
 - Trouver le dernier `\&` pour mettre `endnumbering` après la dernière strophe
 
+ 
